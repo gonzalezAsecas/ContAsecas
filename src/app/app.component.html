@@ -1,0 +1,64 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <span>Welcome</span>
+</div>
+
+<div class="content">
+  <div class="calendar_text_left">
+    <div>
+      <h5>Hola:</h5>
+      <textarea name="nombredelacaja" rows="25" cols="50"></textarea>
+    </div>
+    <div>
+      <h5>Hola:</h5>
+      <textarea name="nombredelacaja" rows="25" cols="50"></textarea>
+    </div>
+  </div>
+  <div class="calendar" role="main">
+    <!-- Highlight Card -->
+    <div class="card highlight-card">
+      <div class="calendar__info">
+        <div class="calendar__prev" id="prev-month" (click)="lastMonth()">&#9664;</div>
+        <div class="calendar__data">
+          <div class="calendar__month calendar__item" id="month">{{month}}</div>
+          <div class="calendar__year calendar__item" id="year">{{year}}</div>
+          <div class="calendar_button calendar__item" id="add_movement"><button>+</button></div>
+        </div>
+        <div class="calendar__next" id="next-month" (click)="nextMonth()">&#9654;</div>
+      </div>
+      <div class="calendar__week calendar__info">
+        <div class="calendar__item">Lunes</div>
+        <div class="calendar__item">Martes</div>
+        <div class="calendar__item">Miercoles</div>
+        <div class="calendar__item">Jueves</div>
+        <div class="calendar__item">Viernes</div>
+        <div class="calendar__item">Sabado</div>
+        <div class="calendar__item">Domingo</div>
+      </div>
+    </div>
+    <div class="card highlight-card calendar__dates" id="dates" (click)="select_day($event)" [innerHtml]="writeMonth()"></div>
+  </div>
+  <div class="calendar_text_right">
+    <h5>Observaciones:</h5>
+    <textarea name="observaciones" rows="54" cols="50"></textarea>
+  </div>
+</div>
+<div class="calendar cost_income_list">
+  <h4>Gastos e ingresos:</h4>
+  <ul id="cost_income_list" (click)="select_cost_income($event)" [innerHtml]="add_today_cost_income()"></ul>
+</div>
